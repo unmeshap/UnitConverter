@@ -1,0 +1,39 @@
+name: Java CI with Maven
+
+# Trigger on pushes to main and PRs targeting main
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Checkout code
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      # Step 2: Set up Java 11
+      - name: Set up JDK 11
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '11'
+
+      # Step 3: Build with Maven
+      - name: Build with Maven
+        run: mvn -B package --file pom.xml
+
+      # Step 4: Run Tests
+      - name: Run Tests
+        run: mvn test
+
+      # Optional: Upload compiled JAR as artifact
+      - name: Upload JAR artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: unit-converter-jar
+          path: target/*.jar
