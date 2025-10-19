@@ -42,9 +42,8 @@ Result: correct
 
 ## Installation & Setup
 
-**Clone the repository**
-git clone https://github.com/unmeshap/unit-converter.git
-cd unit-converter
+### Clone the repository ###
+git clone https://github.com/unmeshap/UnitConverter.git
 
 
 ## Running Tests
