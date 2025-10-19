@@ -54,6 +54,15 @@ To run all tests:
 mvn clean test
 
 
+## Continuous Integration / Deployment
+
+This project uses **GitHub Actions** to automatically build and test the code on every push to the `main` branch and on pull requests.  
+
+- Maven build and JUnit tests are run automatically  
+- Compiled JAR is uploaded as an artifact after successful builds  
+- Ensures code quality and helps reviewers validate changes before merging
+
+
 ## Future Improvements (Prioritized Development Tasks)
 1. Improve Input Validation: Add checks for invalid units, non-numeric input, or missing fields, and provide clear error messages instead of generic “invalid” responses.
 2. Enhance Unit Testing: Add test cases for all combinations of units.
